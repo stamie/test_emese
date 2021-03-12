@@ -2,6 +2,10 @@ bin/*
 config/*
 var/*
 vendor/*
+bin/
+config/
+var/
+vendor/
 .env
 .env.test
 .env
