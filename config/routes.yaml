@@ -1,0 +1,18 @@
+app_forgot_password_request:
+    path: /reset-password
+    controller: App\Controller\ResetPasswordController::request 
+app_reset_password:
+    path: /reset
+    controller: App\Controller\ResetPasswordController::reset
+app_login:
+    path: /
+    controller: App\Controller\SecurityController::login 
+app_logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logout   
+target_path:
+     path: /login/login
+     controller: App\Controller\LoginController::login
+adduser:
+     path: /login/adduser
+     controller: App\Controller\LoginController::adduser

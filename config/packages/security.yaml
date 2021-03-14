@@ -1,0 +1,47 @@
+security:
+    #enable_authenticator_manager: true
+    
+    
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        app_user_provider:
+            entity:
+                # the class of the entity that represents users
+                class: 'App\Entity\User'
+                # the property to query by - e.g. username, email, etc
+                property: email
+    encoders:
+        # use your user class name here
+        App\Entity\User:
+            algorithm:   'sodium'
+            memory_cost:  16384 # Amount in KiB. (16384 = 16 MiB)
+            time_cost:    3     # Number of iterations
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        default:
+            security: true
+            form_login: true
+            http_basic: false
+            entry_point: form_login
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
+           
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+    access_control:
+        # allow unauthenticated users to access the login form
+        - { path: ^/login, roles: PUBLIC_ACCESS }
+        #- { path: ^/login/index, roles: PUBLIC_ACCESS }
+
+        # but require authentication for all other admin routes
+        - { path: ^/logins, roles: ROLE_ADMIN }

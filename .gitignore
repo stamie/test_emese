@@ -1,16 +1,4 @@
 bin/*
-config/*
 var/*
-vendor/*
-bin/
-config/
-var/
-vendor/
 .env
 .env.test
-.env
-.env.test
-composer.json
-composer.lock
-phpunit.xml.dist
-symfony.lock
