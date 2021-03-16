@@ -25,3 +25,6 @@ users:
 addfurniture:
     path: /furnitures/addfurniture
     controller: App\Controller\FurnituresController::addfurniture
+user:
+    path: /user
+    controller: App\Controller\UserController::index
