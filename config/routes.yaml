@@ -1,10 +1,13 @@
-# app_forgot_password_request:
-#     path: /reset-password
-#     controller: App\Controller\ResetPasswordController::request 
-# app_reset_password:
-#     path: /reset
-#     controller: App\Controller\ResetPasswordController::reset
+app_forgot_password_request:
+    path: /reset-password
+    controller: App\Controller\ResetPasswordController::request 
+app_reset_password:
+    path: /reset
+    controller: App\Controller\ResetPasswordController::reset
 app_login:
+    path: /
+    controller: App\Controller\SecurityController::login 
+app_home:
     path: /
     controller: App\Controller\SecurityController::login 
 app_logout:
@@ -22,9 +25,6 @@ furnitures:
 users:
     path: /user
     controller: App\Controller\UsersController::index
-addfurniture:
-    path: /furnitures/addfurniture
-    controller: App\Controller\FurnituresController::addfurniture
 user:
     path: /user
     controller: App\Controller\UserController::index

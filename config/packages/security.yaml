@@ -1,5 +1,5 @@
 security:
-    #enable_authenticator_manager: true
+    enable_authenticator_manager: true
     
     
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
@@ -41,7 +41,7 @@ security:
     access_control:
         # but require authentication for all other admin routes
         - { path: ^/user, roles: ROLE_ADMIN }
-        - { path: ^/fruniture, roles: ROLE_ADMIN }
+        - { path: ^/furniture/, roles: ROLE_ADMIN }
         - { path: ^/login/login, roles: ROLE_ADMIN }
         - { path: ^/reset-password, roles: ROLE_ADMIN }
         - { path: ^/reset, roles: ROLE_ADMIN }
