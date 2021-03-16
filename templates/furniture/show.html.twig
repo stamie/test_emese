@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Furniture{% endblock %}
+
+{% block body %}
+    <h1>Furniture</h1>
+    <p>Be van jelentkezve! <a href= {{ url('app_logout') }}>Kilépés ITT!!!</a></p>
+    <p><a href={{ url('users') }}>Userek kezelése</a></p>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ furniture.id }}</td>
+            </tr>
+            <tr>
+                <th>Inventory_number</th>
+                <td>{{ furniture.inventoryNumber }}</td>
+            </tr>
+            <tr>
+                <th>Modell_id</th>
+                <td>{{ furniture.modellId }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ furniture.price }}</td>
+            </tr>
+            <tr>
+                <th>Count</th>
+                <td>{{ furniture.count }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('furniture_index') }}">back to list</a>
+
+    <a href="{{ path('furniture_edit', {'id': furniture.id}) }}">edit</a>
+
+    {{ include('furniture/_delete_form.html.twig') }}
+{% endblock %}

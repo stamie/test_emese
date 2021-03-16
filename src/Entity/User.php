@@ -5,12 +5,16 @@ namespace App\Entity;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+//use Symfony\Component\Security\Core\Encoder\MigratingPasswordEncoder;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User implements UserInterface
 {
+    /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    //private $apiToken;
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -33,6 +37,11 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_active;
 
     public function getId(): ?int
     {
@@ -89,7 +98,7 @@ class User implements UserInterface
     }
 
     public function setPassword(string $password): self
-    {
+    {        
         $this->password = $password;
 
         return $this;
@@ -113,5 +122,17 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getIsActive(): ?bool
+    {
+        return $this->is_active;
+    }
+
+    public function setIsActive(bool $is_active): self
+    {
+        $this->is_active = $is_active;
+
+        return $this;
     }
 }
