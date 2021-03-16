@@ -40,7 +40,12 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
     access_control:
         # but require authentication for all other admin routes
+        - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/fruniture, roles: ROLE_ADMIN }
         - { path: ^/login/login, roles: ROLE_ADMIN }
+        - { path: ^/reset-password, roles: ROLE_ADMIN }
+        - { path: ^/reset, roles: ROLE_ADMIN }
+
         # allow unauthenticated users to access the login form
         - { path: ^/, roles: PUBLIC_ACCESS }
        

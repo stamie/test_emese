@@ -4,7 +4,8 @@
 
 {% block body %}
     <h1>Create new Furniture</h1>
-
+    <p>Be van jelentkezve! <a href= {{ url('app_logout') }}>Kilépés ITT!!!</a></p>
+    <p><a href={{ url('users') }}>Userek kezelése</a></p>
     {{ include('furniture/_form.html.twig') }}
 
     <a href="{{ path('furniture_index') }}">back to list</a>

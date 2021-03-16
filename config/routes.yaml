@@ -1,9 +1,9 @@
-app_forgot_password_request:
-    path: /reset-password
-    controller: App\Controller\ResetPasswordController::request 
-app_reset_password:
-    path: /reset
-    controller: App\Controller\ResetPasswordController::reset
+# app_forgot_password_request:
+#     path: /reset-password
+#     controller: App\Controller\ResetPasswordController::request 
+# app_reset_password:
+#     path: /reset
+#     controller: App\Controller\ResetPasswordController::reset
 app_login:
     path: /
     controller: App\Controller\SecurityController::login 

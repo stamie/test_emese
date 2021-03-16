@@ -4,7 +4,8 @@
 
 {% block body %}
     <h1>User</h1>
-
+    <p>Be van jelentkezve! <a href= {{ url('app_logout') }}>Kilépés ITT!!!</a></p>
+    <p><a href={{ url('furnitures') }}>Bútorok adatbázis kezelése</a></p>
     <table class="table">
         <tbody>
             <tr>
@@ -18,10 +19,6 @@
             <tr>
                 <th>Roles</th>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
             </tr>
             <tr>
                 <th>Is_active</th>
