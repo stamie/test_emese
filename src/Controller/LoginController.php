@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\Type\LoginType;
 use App\Repository\UserRepository;
 use App\Security\User as SecurityUser;
 
@@ -21,13 +20,9 @@ class LoginController extends AbstractController
      */
     public function index(): Response
     {
-        $login = new User();
-        $form = $this->createForm(FormLoginType::class, $login, [
-            'action' => $this->generateUrl('logins'),
-            'method' => 'POST',
-        ]);
+        
         return $this->render('login/index.html.twig', [ 
-            'form' => $form->createView(),
+          
         ]);
     }
 

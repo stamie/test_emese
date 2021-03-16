@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\FurnitureRepository;
+use App\Repository\ModellRepository;
+use app\Entity\Modell;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -91,15 +93,5 @@ class Furniture
         return $this;
     }
 
-    public function getű(): ?string
-    {
-        return $this->ű;
-    }
 
-    public function setű(string $ű): self
-    {
-        $this->ű = $ű;
-
-        return $this;
-    }
 }

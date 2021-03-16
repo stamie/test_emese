@@ -11,8 +11,17 @@ app_logout:
     path: /logout
     controller: App\Controller\SecurityController::logout   
 target_path:
-     path: /login/login
-     controller: App\Controller\LoginController::login
+    path: /login/login
+    controller: App\Controller\LoginController::login
 adduser:
-     path: /login/adduser
-     controller: App\Controller\LoginController::adduser
+    path: /login/adduser
+    controller: App\Controller\LoginController::adduser
+furnitures:
+    path: /furniture
+    controller: App\Controller\FurnitureController::index
+users:
+    path: /user
+    controller: App\Controller\UsersController::index
+addfurniture:
+    path: /furnitures/addfurniture
+    controller: App\Controller\FurnituresController::addfurniture

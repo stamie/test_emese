@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Furniture index{% endblock %}
+
+{% block body %}
+    <h1>Furniture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Inventory_number</th>
+                <th>Modell_id</th>
+                <th>Price</th>
+                <th>Count</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for furniture in furniture %}
+            <tr>
+                <td>{{ furniture.id }}</td>
+                <td>{{ furniture.inventoryNumber }}</td>
+                <td>{{ furniture.modellId }}</td>
+                <td>{{ furniture.price }}</td>
+                <td>{{ furniture.count }}</td>
+                <td>
+                    <a href="{{ path('furniture_show', {'id': furniture.id}) }}">show</a>
+                    <a href="{{ path('furniture_edit', {'id': furniture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <table>
+    <tr>
+    {% for i in 0..pages %}
+        <td>
+            <a href={{ url('furnitures',{'page':i}) }}>{{i+1}}</a>
+        </td>
+    {% endfor %}
+    </tr>
+    </table>
+
+    <a href="{{ path('furniture_new') }}">Create new</a>
+{% endblock %}
